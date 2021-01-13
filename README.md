@@ -10,4 +10,61 @@ __Input__
 
 __Output__
   
+   ![sudoku_solver1](https://user-images.githubusercontent.com/66546368/104477381-0a16ba00-55e7-11eb-886b-406a6a33036e.jpg)
+   
+-----
+# steps
+ ## incol()
+ Define a method called __incol()__, this will take call and num\
+      for each row r in the arr, do\
+      if  arr[r, col] = num, then return true\
+  return false otherwise\
   
+ ----
+## inrow()
+Define a method called __inrow()__, this will take row and num\
+for each column c in the arr, do\
+if arr[row, c] = num, then return true\
+return false otherwise\
+
+------
+## inbox()
+Define a method called __inbox()__ this will take boxStartRow, boxStartCol, num\
+for each row r in boxStartRow to next 3 rows, do\
+for each col r in boxStartCol to next 3 columns, do\
+if arr[r, c] = num, then return true\
+return false otherwise\
+
+-------
+## unassignedlocation()
+Define a method called __unassignedlocation()__, this will take row and col\
+for each row r in the arr, do\
+for each column c in the arr, do\
+if arr[r, c] = 0, then return true\
+return false\
+
+------
+##  issafe()
+
+Define a method called __issafe()__, this will take row, col, num\
+if inrow(row, num) and incol(col, num) and inbox(row – row mod 3, col – col mod 3, num) all are false and arr[row][col]==0 , then return true\
+
+-------
+##  solvesudoku()
+Define a method called __solveSudoku()__, this will take the grid\
+if no place in the grid is empty, then return true\
+for number 1 to 9, do\
+if issafe(row, col, number), then\
+arr[row, col] := number\
+if solveSudoku = true, then return true\
+grid[row, col] := 0\
+return false\
+
+-------
+## main function()
+  In main function, values of each row and column has already been assigned in which 0 denotes as unassigned location.\
+  If __sudokusolve(arr)__ is true then Solved Sudoku will be printed using __print(arr)__ function.\
+  If there is no solution of Sudoku then, a message __"No Solution of this Sudoku Exists"__ dispalyed on the output screen.\
+  
+  --------
+
